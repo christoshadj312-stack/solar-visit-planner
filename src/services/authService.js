@@ -1,8 +1,9 @@
+import { DEMO_SESSION } from "../demo/demoData.js";
 import { isSupabaseConfigured, supabase } from "./supabaseClient.js";
 
 export async function getCurrentSession() {
   if (!isSupabaseConfigured) {
-    return null;
+    return DEMO_SESSION;
   }
 
   try {
@@ -17,7 +18,7 @@ export async function getCurrentSession() {
 
 export async function signIn(email, password) {
   if (!isSupabaseConfigured) {
-    throw new Error("Supabase is not configured. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.");
+    return DEMO_SESSION;
   }
 
   const { data, error } = await supabase.auth.signInWithPassword({ email, password });
