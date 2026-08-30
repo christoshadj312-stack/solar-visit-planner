@@ -1,5 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { DEMO_CUSTOMERS } from "../demo/demoData.js";
 import { listCustomers } from "../services/customerService.js";
+import { isSupabaseConfigured } from "../services/supabaseClient.js";
 import { isToday } from "../utils/date.js";
 
 export function useCustomers() {
@@ -10,7 +12,13 @@ export function useCustomers() {
   const refresh = useCallback(async () => {
     setLoading(true);
     setError("");
+
     try {
+      if (!isSupabaseConfigured) {
+        setCustomers(DEMO_CUSTOMERS);
+        return;
+      }
+
       const data = await listCustomers();
       setCustomers(data);
     } catch (err) {
