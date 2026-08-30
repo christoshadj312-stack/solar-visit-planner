@@ -11,6 +11,7 @@ import {
   Send,
   Settings as SettingsIcon,
   Smartphone,
+  Sun,
   X,
   XCircle,
 } from "lucide-react";
@@ -86,8 +87,8 @@ export function AppLayout() {
         aria-hidden={!drawerOpen}
       >
         <div className="drawer-brand">
-          <Link to="/appointments" onClick={closeDrawer}>
-            <img src="/assets/logo/solarvisit-symbol.png" alt={t("app.brand")} />
+          <Link to="/appointments" onClick={closeDrawer} aria-label={t("app.brand")}>
+            <Sun size={28} aria-hidden="true" />
           </Link>
 
           <button
@@ -116,8 +117,8 @@ export function AppLayout() {
         </nav>
 
         <div className="drawer-user">
-          <span>C</span>
-          <strong>Christos</strong>
+          <span>D</span>
+          <strong>Demo User</strong>
 
           <button
             type="button"
