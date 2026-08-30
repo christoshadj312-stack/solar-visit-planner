@@ -1,0 +1,11 @@
+{
+  "name": "SolarVisit",
+  "short_name": "SolarVisit",
+  "description": "Field visit planning platform for solar sales and technical teams.",
+  "theme_color": "#142E26",
+  "background_color": "#F0F5F4",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "/",
+  "scope": "/"
+}
