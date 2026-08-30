@@ -25,6 +25,7 @@ Field teams often work across multiple tools for appointments, maps, customer no
 - Supabase authentication, database, storage, and row-level security
 - Responsive mobile-first React interface
 - AI-assisted features for field workflows
+- Zero-config local demo mode with synthetic customer and appointment data
 
 ## Architecture
 
@@ -142,8 +143,10 @@ Examples include:
 solar-visit-planner/
 ├── api/                  # Vercel serverless endpoints
 ├── android/              # Public Android companion architecture notes
+├── docs/screenshots/     # Portfolio screenshots
 ├── src/
 │   ├── components/       # Reusable React UI
+│   ├── demo/             # Synthetic demo data
 │   ├── hooks/            # Application hooks
 │   ├── i18n/             # Greek / English translations
 │   ├── pages/            # Main application screens
@@ -157,25 +160,20 @@ solar-visit-planner/
 └── vite.config.js
 ```
 
-## Local Setup
+## Local Demo — No Account Required
 
-Install dependencies:
+The portfolio version can be opened locally without Supabase credentials or a login account.
 
 ```bash
+git clone https://github.com/christoshadj312-stack/solar-visit-planner.git
+cd solar-visit-planner
 npm install
-```
-
-Create a local environment file:
-
-```bash
-cp .env.example .env
-```
-
-Add your own development credentials to `.env`, then run:
-
-```bash
 npm run dev
 ```
+
+When Supabase environment variables are absent, SolarVisit automatically starts in demo mode with synthetic customers and appointments. No production data is used.
+
+For a fully configured development environment, copy `.env.example` to `.env` and add your own development credentials.
 
 Production build:
 
@@ -231,11 +229,9 @@ SolarVisit demonstrates practical full-stack engineering across:
 
 Portfolio / demonstration version. Production-specific configuration has intentionally been removed.
 
-Screenshots from the app
+## Screenshots
 
-<img width="1912" height="901" alt="8da03a47-c64b-43d8-a3b3-a7ad25a7f109" src="https://github.com/user-attachments/assets/a2e44196-42e8-4aaa-a5b2-2e01fcd2229e" />
-<img width="1917" height="833" alt="image" src="https://github.com/user-attachments/assets/7182209a-07db-4dac-8b23-d27831fd0c8b" />
-<img width="1917" height="903" alt="a5c1cdfa-061a-4890-9fc3-5b9fcd0201d8" src="https://github.com/user-attachments/assets/efddaaf2-cbae-4994-b278-320c99b20e35" />
-<img width="1912" height="902" alt="907003b9-c180-4a28-8a4b-5b5a7c07c9b6" src="https://github.com/user-attachments/assets/51519267-1343-46ef-8d3e-c80a58282c45" />
-
-
+<img width="1912" height="901" alt="SolarVisit calendar demo" src="https://github.com/user-attachments/assets/a2e44196-42e8-4aaa-a5b2-2e01fcd2229e" />
+<img width="1917" height="833" alt="SolarVisit daily summary" src="https://github.com/user-attachments/assets/7182209a-07db-4dac-8b23-d27831fd0c8b" />
+<img width="1917" height="903" alt="SolarVisit Helios assistant" src="https://github.com/user-attachments/assets/efddaaf2-cbae-4994-b278-320c99b20e35" />
+<img width="1912" height="902" alt="SolarVisit mobile view" src="https://github.com/user-attachments/assets/51519267-1343-46ef-8d3e-c80a58282c45" />
