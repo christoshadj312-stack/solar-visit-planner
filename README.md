@@ -68,6 +68,74 @@ The web application handles the main field workflow and user interface. Supabase
 7. After a visit is completed, a follow-up / thank-you workflow can be triggered.
 8. Reports and summaries provide visibility into field activity.
 
+## Key Engineering Challenges
+
+### Automated GPS Arrival Workflow
+
+Designed a background Android workflow that combines appointment state, device GPS location, route ETA, scheduling rules, and customer status to decide when an arrival notification should be sent.
+
+Key considerations included:
+
+- Avoiding duplicate notifications
+- Preventing notifications from being sent too early
+- Handling cancelled or completed appointments
+- Distinguishing stationary users from users already travelling
+- Validating the appointment again immediately before sending
+- Recording delivery status back to the backend
+
+### Cross-Platform SMS Automation
+
+Built a workflow where the React application and serverless backend manage communication jobs while an authenticated Android companion performs native SMS delivery.
+
+The architecture separates:
+
+- Message creation and queueing
+- Device approval and identification
+- SMS delivery
+- Failure handling
+- Delivery-status updates
+- Appointment-state validation
+
+This allows native device capabilities to be used without exposing server-side credentials in the web client.
+
+### Route Optimization and Location Workflows
+
+Implemented address geocoding, route optimization, navigation links, ETA-based logic, and location-aware appointment workflows.
+
+The application uses location data not only for navigation, but also as an input into automation decisions such as customer arrival notifications.
+
+### Offline and Field Reliability
+
+Field applications cannot assume perfect connectivity. SolarVisit includes an offline customer cache and defensive error handling so previously loaded customer information remains available during temporary network interruptions.
+
+### Secure Client / Server Separation
+
+Sensitive operations are handled through server-side API routes rather than directly from the browser.
+
+Examples include:
+
+- Service-role database operations
+- Protected SMS queue actions
+- Server-side map integrations
+- AI service calls
+- Android companion authentication
+
+The public repository contains only placeholder environment values and excludes production credentials.
+
+### Real-World Business Logic
+
+A major part of the project was translating operational rules into application logic rather than building only generic CRUD screens.
+
+Examples include:
+
+- Appointment status transitions
+- Reminder scheduling
+- Duplicate SMS prevention
+- Arrival-notification timing
+- Route-order handling
+- Follow-up messages after completed visits
+- Device authorization for SMS sending
+
 ## Repository Structure
 
 ```text
