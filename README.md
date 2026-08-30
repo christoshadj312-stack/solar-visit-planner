@@ -230,3 +230,6 @@ SolarVisit demonstrates practical full-stack engineering across:
 ## Status
 
 Portfolio / demonstration version. Production-specific configuration has intentionally been removed.
+
+<img width="1912" height="901" alt="8da03a47-c64b-43d8-a3b3-a7ad25a7f109" src="https://github.com/user-attachments/assets/a2e44196-42e8-4aaa-a5b2-2e01fcd2229e" />
+
