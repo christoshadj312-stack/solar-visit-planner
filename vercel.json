@@ -1,0 +1,14 @@
+{
+  "crons": [
+    {
+      "path": "/api/send-sms-reminders",
+      "schedule": "0 8 * * *"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
