@@ -1,0 +1,22 @@
+node_modules
+dist
+.env
+.env.local
+.DS_Store
+
+.vercel
+
+.vercel
+.env*
+# Android / PV Companion
+android/**/.gradle/
+android/**/build/
+android/**/app/build/
+android/**/local.properties
+android/**/*.iml
+android/**/.idea/
+android/**/*.keystore
+android/**/*.jks
+
+# Android signing / secrets
+android/**/key.properties
